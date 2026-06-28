@@ -1,12 +1,14 @@
 import "dotenv/config";
 
 import express from "express";
-import authRouter from "./routes/auth.js";
+import { toNodeHandler } from "better-auth/node";
+
+import { auth } from "./auth.js";
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
 
-app.use("/api/auth", authRouter);
+app.all("/api/auth/{*splat}", toNodeHandler(auth));
 app.use(express.json());
 
 app.get("/", (_req, res) => {
