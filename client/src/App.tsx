@@ -1,16 +1,25 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SignIn } from "@/features/auth";
+import { SignUp } from "@/features/auth/sign-up";
+import { Home } from "@/features/home";
+import { Toaster } from "@/components/ui/sonner";
+
 /**
- * Renders the simplified home page.
+ * Root application component with routing and toast provider.
  *
- * @returns The application home page.
+ * @returns The application with routing and global Toaster.
  */
 function App() {
   return (
-    <main className="flex min-h-screen items-center justify-center px-6">
-      <h1 className="text-center text-4xl font-semibold tracking-tight text-foreground sm:text-6xl">
-        AI Finance Tracker
-      </h1>
-    </main>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/" element={<Home />} />
+      </Routes>
+      <Toaster />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
