@@ -53,6 +53,15 @@ Before finalizing any implementation, make sure the code:
 5. Reuses existing utilities and patterns instead of duplicating behavior
 6. Is ready for long-term maintenance in a production application
 
+## Styling Requirement
+
+- Use Tailwind CSS as the primary styling approach for the client application
+- Use shadcn/ui as the primary design system for client-side components so the application stays visually and behaviorally consistent
+- Prefer utility classes in components over creating page-specific CSS files when Tailwind can express the design clearly
+- Prefer shadcn/ui components and patterns before creating custom UI primitives from scratch
+- Only add custom CSS when Tailwind alone is not a reasonable or maintainable fit
+- Keep styling consistent with the shared Tailwind and shadcn/ui design tokens already configured in the project
+
 ## Documentation Requirement
 
 - Add concise JSDoc comments to every function you create or modify
