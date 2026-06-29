@@ -1,6 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { SignIn } from "@/features/auth";
-import { SignUp } from "@/features/auth/sign-up";
+import { SignIn, SignUp } from "@/features/auth";
 import { Home } from "@/features/home";
 import { Toaster } from "@/components/ui/sonner";
 
